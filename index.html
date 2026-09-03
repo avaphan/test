@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ava Phan | Portfolio</title>
+    <title>Ava Phan | About Me</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -24,251 +27,397 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
-        nav {
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .main-nav {
+            width: 100%;
+            height: 75px;
             background-color: white;
-            padding: 20px 8%;
+
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+
+            padding: 0 8%;
+
             position: sticky;
             top: 0;
+
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
         }
 
-        nav h2 {
-            font-size: 24px;
-        }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
+        .nav-name a {
             text-decoration: none;
             color: #222;
+
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+
+            font-size: 16px;
             font-weight: 600;
+
+            transition: 0.2s;
         }
 
-        nav a:hover {
-            color: #555;
+
+        .nav-links a:hover {
+            color: #777;
         }
 
-        /* Hero Section */
+
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
             min-height: 85vh;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             text-align: center;
+
             padding: 60px 20px;
-            background: linear-gradient(135deg, #ffffff, #eef1f5);
+
+            background: linear-gradient(
+                135deg,
+                #ffffff,
+                #eef1f5
+            );
         }
+
 
         .hero-content {
             max-width: 800px;
         }
+
 
         .hero h1 {
             font-size: 60px;
             margin-bottom: 15px;
         }
 
+
         .hero h3 {
             font-size: 24px;
             font-weight: 400;
+
             color: #555;
+
             margin-bottom: 25px;
         }
 
+
         .hero p {
             font-size: 18px;
+
             color: #666;
+
             max-width: 650px;
-            margin: auto;
-            margin-bottom: 35px;
+
+            margin: 0 auto 35px;
         }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
 
         .button {
             display: inline-block;
+
             padding: 13px 25px;
             margin: 8px;
+
             background-color: #222;
             color: white;
+
             text-decoration: none;
+
             border-radius: 6px;
+
             transition: 0.3s;
         }
+
 
         .button:hover {
             background-color: #555;
             transform: translateY(-2px);
         }
 
+
         .button-outline {
             background-color: transparent;
+
             color: #222;
+
             border: 2px solid #222;
         }
+
 
         .button-outline:hover {
             background-color: #222;
             color: white;
         }
 
-        /* Sections */
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
         section {
             padding: 80px 10%;
         }
 
+
         .section-title {
             font-size: 36px;
+
             margin-bottom: 30px;
+
             text-align: center;
         }
 
-        /* About */
+
+        /* =========================
+           ABOUT
+        ========================= */
+
         .about {
             background-color: white;
         }
 
+
         .about-container {
             max-width: 850px;
+
             margin: auto;
+
             text-align: center;
         }
 
+
         .about p {
             font-size: 18px;
+
             color: #555;
+
             margin-bottom: 18px;
         }
 
-        /* Skills */
+
+        /* =========================
+           SKILLS
+        ========================= */
+
         .skills-container {
             display: flex;
+
             flex-wrap: wrap;
+
             justify-content: center;
+
             gap: 15px;
+
             max-width: 900px;
+
             margin: auto;
         }
 
+
         .skill {
             background-color: white;
+
             padding: 12px 20px;
+
             border-radius: 25px;
+
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+
             font-weight: bold;
         }
 
-        /* Projects */
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
         .projects {
             background-color: white;
         }
 
+
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
             gap: 25px;
+
             max-width: 1100px;
+
             margin: auto;
         }
 
+
         .project-card {
             background-color: #f7f8fa;
+
             padding: 30px;
+
             border-radius: 10px;
+
             transition: 0.3s;
         }
 
+
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.08);
         }
+
 
         .project-card h3 {
             margin-bottom: 12px;
         }
 
+
         .project-card p {
             color: #555;
         }
 
-        /* Contact */
+
+        /* =========================
+           CONTACT
+        ========================= */
+
         .contact {
             text-align: center;
         }
 
+
         .contact p {
             font-size: 18px;
+
             margin-bottom: 25px;
+
             color: #555;
         }
 
-        /* Footer */
+
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             text-align: center;
+
             padding: 25px;
+
             background-color: #222;
+
             color: white;
         }
 
-        /* Mobile */
+
+        /* =========================
+           MOBILE
+        ========================= */
+
         @media (max-width: 700px) {
 
-            nav ul {
-                display: none;
+            .main-nav {
+                padding: 0 5%;
             }
+
+
+            .nav-name a {
+                font-size: 19px;
+            }
+
+
+            .nav-links {
+                gap: 15px;
+            }
+
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
 
             .hero h1 {
                 font-size: 42px;
             }
 
+
             .hero h3 {
                 font-size: 20px;
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <h2>Ava Phan</h2>
 
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- =========================
+         HERO
+    ========================== -->
 
-
-    <!-- Hero -->
     <section class="hero">
 
         <div class="hero-content">
 
             <h1>Hi, I'm Ava!</h1>
 
-            <h3>Marketing Student | AI Enthusiast | Aspiring Business Professional</h3>
+            <h3>
+                Marketing Student | AI Enthusiast |
+                Aspiring Business Professional
+            </h3>
 
             <p>
-                I'm a Marketing student at Iowa State University with a minor in
-                Artificial Intelligence. I'm interested in the intersection of
-                marketing, technology, AI, sales, and business strategy.
+                I'm a Marketing student at Iowa State University
+                with a minor in Artificial Intelligence.
+
+                I'm interested in the intersection of marketing,
+                technology, AI, sales, and business strategy.
             </p>
 
-            <a href="#about" class="button">About Me</a>
+            <a href="#about" class="button">
+                About Me
+            </a>
 
-            <a href="#projects" class="button button-outline">
-                View My Projects
+            <a href="research.html"
+               class="button button-outline">
+                View My Research
             </a>
 
         </div>
@@ -276,36 +425,43 @@
     </section>
 
 
-    <!-- About -->
+
+    <!-- =========================
+         ABOUT ME
+    ========================== -->
+
     <section class="about" id="about">
 
         <div class="about-container">
 
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">
+                About Me
+            </h2>
 
             <p>
-                My name is Ava Phan, and I am currently studying Marketing at
-                Iowa State University while pursuing a minor in Artificial
-                Intelligence.
+                My name is Ava Phan, and I am currently
+                studying Marketing at Iowa State University
+                while pursuing a minor in Artificial Intelligence.
             </p>
 
             <p>
-                I enjoy learning how technology and artificial intelligence can
-                improve marketing, sales, business operations, and the customer
-                experience.
+                I enjoy learning how technology and artificial
+                intelligence can improve marketing, sales,
+                business operations, and the customer experience.
             </p>
 
             <p>
-                Through my coursework, professional experience, and personal
-                projects, I have developed experience in marketing research,
-                business strategy, artificial intelligence, data analysis,
+                Through my coursework, professional experience,
+                and personal projects, I have developed experience
+                in marketing research, business strategy,
+                artificial intelligence, data analysis,
                 professional communication, and B2B sales.
             </p>
 
             <p>
-                My goal is to build a career where I can combine creativity,
-                technology, communication, and strategy to help businesses
-                solve problems and grow.
+                My goal is to build a career where I can combine
+                creativity, technology, communication, and strategy
+                to help businesses solve problems and grow.
             </p>
 
         </div>
@@ -313,46 +469,91 @@
     </section>
 
 
-    <!-- Skills -->
-    <section id="skills">
 
-        <h2 class="section-title">Skills & Interests</h2>
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section>
+
+        <h2 class="section-title">
+            Skills & Interests
+        </h2>
 
         <div class="skills-container">
 
             <div class="skill">Marketing</div>
-            <div class="skill">Artificial Intelligence</div>
-            <div class="skill">B2B Sales</div>
-            <div class="skill">Marketing Research</div>
-            <div class="skill">Data Analysis</div>
-            <div class="skill">Business Strategy</div>
-            <div class="skill">LinkedIn Marketing</div>
-            <div class="skill">AI Automation</div>
-            <div class="skill">KNIME</div>
-            <div class="skill">n8n</div>
-            <div class="skill">Python</div>
-            <div class="skill">Professional Communication</div>
+
+            <div class="skill">
+                Artificial Intelligence
+            </div>
+
+            <div class="skill">
+                B2B Sales
+            </div>
+
+            <div class="skill">
+                Marketing Research
+            </div>
+
+            <div class="skill">
+                Data Analysis
+            </div>
+
+            <div class="skill">
+                Business Strategy
+            </div>
+
+            <div class="skill">
+                AI Automation
+            </div>
+
+            <div class="skill">
+                KNIME
+            </div>
+
+            <div class="skill">
+                n8n
+            </div>
+
+            <div class="skill">
+                Python
+            </div>
+
+            <div class="skill">
+                Professional Communication
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- Projects -->
-    <section class="projects" id="projects">
 
-        <h2 class="section-title">Featured Projects</h2>
+    <!-- =========================
+         PROJECT PREVIEW
+    ========================== -->
+
+    <section class="projects">
+
+        <h2 class="section-title">
+            Featured Work
+        </h2>
 
         <div class="project-grid">
 
+
             <div class="project-card">
 
-                <h3>AI Influencer Matchmaker</h3>
+                <h3>
+                    AI Influencer Matchmaker
+                </h3>
 
                 <p>
-                    Developed an AI-powered project designed to evaluate
-                    influencers and determine how well they align with brands
-                    using AI, automation, and data analysis.
+                    Developed an AI-powered project designed
+                    to evaluate influencers and determine
+                    how well they align with brands using
+                    AI, automation, and data analysis.
                 </p>
 
             </div>
@@ -360,11 +561,14 @@
 
             <div class="project-card">
 
-                <h3>Marketing Research</h3>
+                <h3>
+                    Marketing Research
+                </h3>
 
                 <p>
-                    Applied marketing research concepts to identify management
-                    decision problems, develop research questions, and analyze
+                    Applied marketing research concepts to
+                    identify management decision problems,
+                    develop research questions, and analyze
                     customer preferences.
                 </p>
 
@@ -373,68 +577,95 @@
 
             <div class="project-card">
 
-                <h3>AI & Business Automation</h3>
+                <h3>
+                    AI & Business Automation
+                </h3>
 
                 <p>
-                    Explored how AI tools and automation platforms can help
-                    businesses streamline workflows, analyze information, and
-                    improve decision-making.
-                </p>
-
-            </div>
-
-
-            <div class="project-card">
-
-                <h3>B2B Technology Marketing</h3>
-
-                <p>
-                    Gained experience creating outreach strategies and marketing
-                    content for technology solutions while working with
-                    business and IT professionals.
+                    Explored how artificial intelligence
+                    and automation can streamline workflows,
+                    analyze information, and improve
+                    business decision-making.
                 </p>
 
             </div>
 
         </div>
 
+
+        <div style="text-align:center; margin-top:35px;">
+
+            <a href="research.html"
+               class="button">
+
+                Explore My Research
+
+            </a>
+
+        </div>
+
     </section>
 
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
 
-        <h2 class="section-title">Let's Connect</h2>
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="contact">
+
+        <h2 class="section-title">
+            Let's Connect
+        </h2>
 
         <p>
-            I'm always interested in connecting with professionals and exploring
-            opportunities in marketing, technology, AI, and sales.
+            I'm always interested in connecting with
+            professionals and exploring opportunities
+            in marketing, technology, AI, and sales.
         </p>
 
-        <!-- Replace links with your own -->
+
         <a
             href="https://www.linkedin.com/in/avaphan"
             target="_blank"
             class="button">
+
             LinkedIn
+
         </a>
+
 
         <a
             href="https://github.com/YOUR-GITHUB-USERNAME"
             target="_blank"
             class="button button-outline">
+
             GitHub
+
         </a>
 
     </section>
 
 
-    <!-- Footer -->
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
 
-        <p>© 2026 Ava Phan. Built with HTML & CSS.</p>
+        <p>
+            © 2026 Ava Phan
+        </p>
 
     </footer>
 
+
+
+    <!-- Load the shared navigation -->
+    <script src="nav.js"></script>
+
+
 </body>
+
 </html>
