@@ -1,16 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Locate the navigation area in the HTML
-    const navigation = document.getElementById("navigation");
+    // Find the navigation area in the HTML
+    const navigation =
+        document.getElementById("navigation");
 
 
-    // Stop the script if the navigation area does not exist
+    // If the page does not contain the navigation area,
+    // stop the script
     if (!navigation) {
         return;
     }
 
 
-    // Create navigation links
+    // Add the navigation menu
     navigation.innerHTML = `
         <nav class="main-navigation">
 
@@ -30,23 +32,26 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
 
-    // Determine which page the user is currently viewing
+    // Find the name of the current page
     let currentPage =
         window.location.pathname.split("/").pop();
 
 
-    // GitHub Pages may load the homepage without "index.html"
+    // GitHub Pages may show the homepage
+    // without displaying index.html
     if (currentPage === "") {
         currentPage = "index.html";
     }
 
 
-    // Get all navigation links
+    // Get all of the top navigation links
     const links =
-        navigation.querySelectorAll(".main-navigation a");
+        navigation.querySelectorAll(
+            ".main-navigation a"
+        );
 
 
-    // Highlight the current page
+    // Highlight whichever page is currently open
     links.forEach(function (link) {
 
         const linkPage =
