@@ -1,5 +1,5 @@
 /* =========================
-   GLOBAL STYLES
+   GLOBAL
 ========================= */
 
 * {
@@ -8,9 +8,11 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -35,7 +37,7 @@ body {
 
     min-height: 100vh;
 
-    background-color: white;
+    background-color: #ffffff;
 
     box-shadow: 0 0 18px rgba(0, 0, 0, 0.08);
 }
@@ -52,14 +54,14 @@ body {
 
     min-height: 130px;
 
-    background-color: white;
+    background-color: #ffffff;
 
     border-bottom: 1px solid #cbd5e1;
 }
 
 
 /* =========================
-   LOGO AREA
+   LOGO
 ========================= */
 
 .logo-area {
@@ -94,13 +96,13 @@ body {
     display: flex;
 
     flex-direction: column;
-
-    justify-content: space-between;
 }
 
 
+/* Centered top text */
+
 .header-info {
-    flex: 1;
+    min-height: 72px;
 
     display: flex;
 
@@ -110,7 +112,7 @@ body {
 
     text-align: center;
 
-    padding: 20px;
+    padding: 15px 20px;
 
     background-color: #f8fbff;
 
@@ -125,17 +127,21 @@ body {
 ========================= */
 
 .main-navigation {
+    width: 100%;
+
     display: flex;
 
-    justify-content: center;
+    justify-content: flex-start;
 
-    width: 100%;
+    align-items: center;
 
     background-color: #eaf3fb;
 
     border-top: 1px solid #cbd5e1;
 }
 
+
+/* Navigation begins toward the left */
 
 .main-navigation a {
     display: block;
@@ -149,6 +155,11 @@ body {
     font-weight: bold;
 
     transition: 0.2s ease;
+}
+
+
+.main-navigation a:first-child {
+    margin-left: 30px;
 }
 
 
@@ -191,26 +202,35 @@ body {
 
 
 .left-sidebar h3 {
-    margin-bottom: 20px;
+    margin-bottom: 38px;
 
     color: #1e3a5f;
 }
 
 
-.left-sidebar a {
-    display: block;
+/* Spreads the links farther apart */
 
-    margin-bottom: 14px;
+.side-navigation {
+    display: flex;
 
+    flex-direction: column;
+
+    gap: 36px;
+}
+
+
+.side-navigation a {
     text-decoration: none;
 
     color: #334155;
 
     font-weight: 600;
+
+    font-size: 16px;
 }
 
 
-.left-sidebar a:hover {
+.side-navigation a:hover {
     color: #1d4ed8;
 }
 
@@ -222,11 +242,44 @@ body {
 .main-content {
     padding: 30px 35px;
 
-    background-color: white;
+    background-color: #ffffff;
 }
 
 
-.main-content h1 {
+/* =========================
+   WELCOME AREA
+   No rectangle/background
+========================= */
+
+.welcome-area {
+    min-height: 170px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    margin-bottom: 15px;
+}
+
+
+.welcome-area h1 {
+    color: #1e3a5f;
+
+    font-size: 34px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   PAGE CONTENT
+========================= */
+
+.page-title {
     margin-bottom: 20px;
 
     color: #1e3a5f;
@@ -248,38 +301,6 @@ body {
     margin-bottom: 18px;
 
     font-size: 16px;
-}
-
-
-/* =========================
-   HERO AREA
-========================= */
-
-.hero-placeholder {
-    width: 100%;
-
-    min-height: 220px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    margin-bottom: 30px;
-
-    background-color: #e7f1fb;
-
-    border: 1px solid #cbd5e1;
-
-    text-align: center;
-}
-
-
-.hero-placeholder h2 {
-    color: #1e3a5f;
-
-    font-size: 30px;
 }
 
 
@@ -313,7 +334,7 @@ body {
 
 
 .sidebar-box p {
-    margin-bottom: 10px;
+    margin-bottom: 13px;
 
     font-size: 14px;
 }
@@ -365,7 +386,7 @@ body {
 
 
 /* =========================
-   RESPONSIVE TABLET
+   TABLET
 ========================= */
 
 @media screen and (max-width: 900px) {
@@ -405,11 +426,20 @@ body {
         border-top: 1px solid #d6e0e8;
     }
 
+
+    .side-navigation {
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+        gap: 25px;
+    }
+
 }
 
 
 /* =========================
-   RESPONSIVE MOBILE
+   MOBILE
 ========================= */
 
 @media screen and (max-width: 650px) {
@@ -422,6 +452,8 @@ body {
     .main-navigation {
         flex-direction: column;
 
+        align-items: stretch;
+
         text-align: center;
     }
 
@@ -431,18 +463,30 @@ body {
     }
 
 
+    .main-navigation a:first-child {
+        margin-left: 0;
+    }
+
+
     .main-content {
         padding: 25px 20px;
     }
 
 
-    .hero-placeholder {
-        min-height: 180px;
+    .welcome-area {
+        min-height: 130px;
     }
 
 
-    .hero-placeholder h2 {
-        font-size: 24px;
+    .welcome-area h1 {
+        font-size: 28px;
+    }
+
+
+    .side-navigation {
+        flex-direction: column;
+
+        gap: 20px;
     }
 
 }
