@@ -1,35 +1,62 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const nav = document.getElementById("navigation");
+    // Locate the navigation area in the HTML
+    const navigation = document.getElementById("navigation");
 
-    if (!nav) {
+
+    // Stop the script if the navigation area does not exist
+    if (!navigation) {
         return;
     }
 
-    nav.innerHTML = `
+
+    // Create navigation links
+    navigation.innerHTML = `
         <nav class="main-navigation">
-            <a href="index.html">About Me</a>
-            <a href="research.html">Research</a>
-            <a href="personal.html">Personal</a>
+
+            <a href="index.html">
+                About Me
+            </a>
+
+            <a href="research.html">
+                Research
+            </a>
+
+            <a href="personal.html">
+                Personal
+            </a>
+
         </nav>
     `;
 
 
-    // Highlight the page the visitor is currently viewing
+    // Determine which page the user is currently viewing
+    let currentPage =
+        window.location.pathname.split("/").pop();
 
-    const currentPage =
-        window.location.pathname.split("/").pop() || "index.html";
 
-    const navigationLinks =
-        nav.querySelectorAll("a");
+    // GitHub Pages may load the homepage without "index.html"
+    if (currentPage === "") {
+        currentPage = "index.html";
+    }
 
-    navigationLinks.forEach(function (link) {
+
+    // Get all navigation links
+    const links =
+        navigation.querySelectorAll(".main-navigation a");
+
+
+    // Highlight the current page
+    links.forEach(function (link) {
 
         const linkPage =
             link.getAttribute("href");
 
+
         if (linkPage === currentPage) {
+
             link.classList.add("active");
+
         }
 
     });
