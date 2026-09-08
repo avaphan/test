@@ -1,24 +1,37 @@
-// nav.js
-// Creates the navigation bar used across the entire website.
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    const navigation = document.createElement("nav");
+    const nav = document.getElementById("navigation");
 
-    navigation.className = "main-nav";
+    if (!nav) {
+        return;
+    }
 
-    navigation.innerHTML = `
-        <div class="nav-name">
-            <a href="index.html">Ava Phan</a>
-        </div>
-
-        <div class="nav-links">
+    nav.innerHTML = `
+        <nav class="main-navigation">
             <a href="index.html">About Me</a>
             <a href="research.html">Research</a>
             <a href="personal.html">Personal</a>
-        </div>
+        </nav>
     `;
 
-    // Adds the navigation to the top of the page
-    document.body.prepend(navigation);
+
+    // Highlight the page the visitor is currently viewing
+
+    const currentPage =
+        window.location.pathname.split("/").pop() || "index.html";
+
+    const navigationLinks =
+        nav.querySelectorAll("a");
+
+    navigationLinks.forEach(function (link) {
+
+        const linkPage =
+            link.getAttribute("href");
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+
+    });
+
 });
