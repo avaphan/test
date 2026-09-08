@@ -1,5 +1,5 @@
 /* =========================
-   GLOBAL h
+   GLOBAL STYLES
 ========================= */
 
 * {
@@ -14,23 +14,28 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #dbeafe; /* soft light blue */
+
+    background-color: #dbeafe;
+
     color: #1f2937;
+
     line-height: 1.6;
 }
 
 
 /* =========================
-   MAIN WEBSITE WRAPPER
-   Leaves 10% on each side
+   MAIN WEBSITE CONTAINER
+   10% background on each side
 ========================= */
 
 .site-wrapper {
     width: 80%;
+
     margin: 0 auto;
+
     min-height: 100vh;
 
-    background-color: #ffffff;
+    background-color: white;
 
     box-shadow: 0 0 18px rgba(0, 0, 0, 0.08);
 }
@@ -45,58 +50,73 @@ body {
 
     grid-template-columns: 22% 78%;
 
-    border-bottom: 1px solid #cbd5e1;
+    min-height: 130px;
 
-    background-color: #ffffff;
+    background-color: white;
+
+    border-bottom: 1px solid #cbd5e1;
 }
 
 
-/* Logo area */
+/* =========================
+   LOGO AREA
+========================= */
 
 .logo-area {
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
-    min-height: 125px;
+    padding: 20px;
 
     border-right: 1px solid #cbd5e1;
-
-    padding: 20px;
 }
 
-.logo-area h1,
-.logo-area a {
-    font-size: 32px;
-    font-weight: bold;
 
+.logo-area a {
     text-decoration: none;
 
     color: #1e3a5f;
+
+    font-size: 30px;
+
+    font-weight: bold;
 }
 
 
-/* Header information */
+/* =========================
+   HEADER CONTENT
+========================= */
 
 .header-content {
     display: flex;
+
     flex-direction: column;
+
+    justify-content: space-between;
 }
+
 
 .header-info {
     flex: 1;
 
     display: flex;
-    align-items: center;
+
     justify-content: center;
 
-    padding: 20px;
+    align-items: center;
 
     text-align: center;
+
+    padding: 20px;
 
     background-color: #f8fbff;
 
     color: #475569;
+
+    font-size: 17px;
 }
 
 
@@ -105,45 +125,47 @@ body {
 ========================= */
 
 .main-navigation {
-    width: 100%;
-
     display: flex;
+
     justify-content: center;
+
+    width: 100%;
 
     background-color: #eaf3fb;
 
     border-top: 1px solid #cbd5e1;
-    border-bottom: 1px solid #cbd5e1;
 }
+
 
 .main-navigation a {
     display: block;
 
-    padding: 12px 28px;
-
-    color: #1e3a5f;
+    padding: 12px 30px;
 
     text-decoration: none;
 
-    font-weight: 600;
+    color: #1e3a5f;
 
-    transition: background-color 0.2s ease,
-                color 0.2s ease;
+    font-weight: bold;
+
+    transition: 0.2s ease;
 }
+
 
 .main-navigation a:hover {
-    background-color: #d7e8f8;
-    color: #0f2742;
+    background-color: #d5e7f7;
 }
 
+
 .main-navigation a.active {
-    background-color: #c8def2;
-    color: #0f2742;
+    background-color: #c7def2;
+
+    color: #102c49;
 }
 
 
 /* =========================
-   PAGE BODY
+   PAGE GRID
 ========================= */
 
 .page-layout {
@@ -151,7 +173,7 @@ body {
 
     grid-template-columns: 20% 60% 20%;
 
-    min-height: 600px;
+    min-height: 650px;
 }
 
 
@@ -162,26 +184,31 @@ body {
 .left-sidebar {
     padding: 30px 20px;
 
-    background-color: #f5f9fd;
+    background-color: #f4f9fd;
 
     border-right: 1px solid #d6e0e8;
 }
 
+
 .left-sidebar h3 {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 
     color: #1e3a5f;
 }
 
+
 .left-sidebar a {
     display: block;
 
-    margin-bottom: 12px;
+    margin-bottom: 14px;
+
+    text-decoration: none;
 
     color: #334155;
 
-    text-decoration: none;
+    font-weight: 600;
 }
+
 
 .left-sidebar a:hover {
     color: #1d4ed8;
@@ -195,42 +222,64 @@ body {
 .main-content {
     padding: 30px 35px;
 
-    background-color: #ffffff;
+    background-color: white;
 }
+
 
 .main-content h1 {
     margin-bottom: 20px;
 
     color: #1e3a5f;
+
+    font-size: 34px;
 }
+
 
 .main-content h2 {
     margin-top: 28px;
+
     margin-bottom: 12px;
 
     color: #274c77;
 }
 
+
 .main-content p {
     margin-bottom: 18px;
+
+    font-size: 16px;
 }
 
 
 /* =========================
-   HERO IMAGE
+   HERO AREA
 ========================= */
 
-.hero-image {
+.hero-placeholder {
     width: 100%;
-    height: 280px;
 
-    object-fit: cover;
+    min-height: 220px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     margin-bottom: 30px;
 
-    border-radius: 4px;
+    background-color: #e7f1fb;
 
-    border: 1px solid #d6e0e8;
+    border: 1px solid #cbd5e1;
+
+    text-align: center;
+}
+
+
+.hero-placeholder h2 {
+    color: #1e3a5f;
+
+    font-size: 30px;
 }
 
 
@@ -241,48 +290,46 @@ body {
 .right-sidebar {
     padding: 30px 20px;
 
-    background-color: #f5f9fd;
+    background-color: #f4f9fd;
 
     border-left: 1px solid #d6e0e8;
 }
 
-.right-sidebar h3 {
-    margin-bottom: 18px;
-
-    color: #1e3a5f;
-}
 
 .sidebar-box {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 
     padding-bottom: 20px;
 
     border-bottom: 1px solid #d6e0e8;
 }
 
-.sidebar-box p,
-.sidebar-box a {
+
+.sidebar-box h3 {
+    margin-bottom: 15px;
+
+    color: #1e3a5f;
+}
+
+
+.sidebar-box p {
+    margin-bottom: 10px;
+
     font-size: 14px;
 }
 
 
-/* =========================
-   SOCIAL LINKS
-========================= */
-
-.social-links {
-    display: flex;
-    gap: 12px;
-
-    margin-top: 10px;
-}
-
-.social-links a {
-    text-decoration: none;
-
+.sidebar-box a {
     color: #1e3a5f;
 
+    text-decoration: none;
+
     font-weight: bold;
+}
+
+
+.sidebar-box a:hover {
+    text-decoration: underline;
 }
 
 
@@ -293,24 +340,24 @@ body {
 .site-footer {
     padding: 20px 30px;
 
-    border-top: 1px solid #cbd5e1;
+    text-align: center;
 
     background-color: #eaf3fb;
 
-    text-align: center;
-
-    font-size: 14px;
+    border-top: 1px solid #cbd5e1;
 
     color: #475569;
+
+    font-size: 14px;
 }
+
 
 .site-footer a {
     color: #1e3a5f;
 
     text-decoration: none;
-
-    margin: 0 8px;
 }
+
 
 .site-footer a:hover {
     text-decoration: underline;
@@ -318,7 +365,7 @@ body {
 
 
 /* =========================
-   RESPONSIVE DESIGN
+   RESPONSIVE TABLET
 ========================= */
 
 @media screen and (max-width: 900px) {
@@ -327,26 +374,43 @@ body {
         width: 92%;
     }
 
+
     .site-header {
         grid-template-columns: 1fr;
     }
 
+
     .logo-area {
         border-right: none;
+
         border-bottom: 1px solid #cbd5e1;
     }
+
 
     .page-layout {
         grid-template-columns: 1fr;
     }
 
-    .left-sidebar,
-    .right-sidebar {
-        border: none;
+
+    .left-sidebar {
+        border-right: none;
+
         border-bottom: 1px solid #d6e0e8;
     }
+
+
+    .right-sidebar {
+        border-left: none;
+
+        border-top: 1px solid #d6e0e8;
+    }
+
 }
 
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
 
 @media screen and (max-width: 650px) {
 
@@ -354,20 +418,31 @@ body {
         width: 100%;
     }
 
+
     .main-navigation {
         flex-direction: column;
+
         text-align: center;
     }
+
 
     .main-navigation a {
         border-bottom: 1px solid #cbd5e1;
     }
 
+
     .main-content {
         padding: 25px 20px;
     }
 
-    .hero-image {
-        height: 220px;
+
+    .hero-placeholder {
+        min-height: 180px;
     }
+
+
+    .hero-placeholder h2 {
+        font-size: 24px;
+    }
+
 }
