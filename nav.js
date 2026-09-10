@@ -1,24 +1,143 @@
-// Reveal each section once as it scrolls into view.
-document.addEventListener('DOMContentLoaded', () => {
-  const sections = document.querySelectorAll('main section');
+document.addEventListener("DOMContentLoaded", function () {
 
-  if (!('IntersectionObserver' in window)) {
-    // Fallback: just show everything if the browser can't observe.
-    sections.forEach(section => section.classList.add('is-visible'));
-    return;
-  }
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        obs.unobserve(entry.target);
-      }
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+        new IntersectionObserver(
+
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        revealObserver.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.15
+            }
+
+        );
+
+
+    revealElements.forEach(function (element) {
+
+        revealObserver.observe(element);
+
     });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -40px 0px'
-  });
 
-  sections.forEach(section => observer.observe(section));
+
+
+    /* =========================
+       SHRINK HEADER ON SCROLL
+    ========================= */
+
+    const header =
+        document.querySelector(".site-header");
+
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 40) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
+
+    });
+
+
+
+    /* =========================
+       HERO PARALLAX MOVEMENT
+    ========================= */
+
+    const heroContent =
+        document.querySelector(".hero-content");
+
+    const backgroundText =
+        document.querySelector(".hero-background-text");
+
+
+    window.addEventListener("scroll", function () {
+
+        const scrollPosition =
+            window.scrollY;
+
+
+        if (scrollPosition < window.innerHeight) {
+
+            heroContent.style.transform =
+                `translateY(${scrollPosition * 0.08}px)`;
+
+
+            backgroundText.style.transform =
+                `translateX(${scrollPosition * 0.05}px)`;
+
+        }
+
+    });
+
+
+
+    /* =========================
+       SMOOTH NAVIGATION
+    ========================= */
+
+    const navLinks =
+        document.querySelectorAll(
+            '.nav-links a[href^="#"]'
+        );
+
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                const targetId =
+                    link.getAttribute("href");
+
+
+                const target =
+                    document.querySelector(targetId);
+
+
+                if (target) {
+
+                    event.preventDefault();
+
+
+                    target.scrollIntoView({
+
+                        behavior: "smooth"
+
+                    });
+
+                }
+
+            }
+        );
+
+    });
+
 });
