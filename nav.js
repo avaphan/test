@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const navigation =
-        document.getElementById("navigation");
-
+    const navigation = document.getElementById("navigation");
 
     if (!navigation) {
         return;
@@ -24,6 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 Personal
             </a>
 
+            <a href="services.html">
+                Services
+            </a>
+
             <a href="#contact">
                 Contact
             </a>
@@ -32,99 +34,64 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
 
-    /* -----------------------------------------
-       CURRENT PAGE HIGHLIGHT
-    ------------------------------------------ */
+    /* CURRENT PAGE */
 
     let currentPage =
         window.location.pathname.split("/").pop();
 
-
     if (currentPage === "") {
-
         currentPage = "index.html";
-
     }
 
 
     const navLinks =
-        navigation.querySelectorAll(
-            ".top-navigation a"
-        );
+        navigation.querySelectorAll(".top-navigation a");
 
 
     navLinks.forEach(function (link) {
 
-        const href =
-            link.getAttribute("href");
-
+        const href = link.getAttribute("href");
 
         if (href === currentPage) {
-
-            link.classList.add(
-                "current-link"
-            );
-
+            link.classList.add("current-link");
         }
 
     });
 
 
-
-    /* -----------------------------------------
-       SMOOTH SCROLL
-    ------------------------------------------ */
+    /* SMOOTH SCROLL */
 
     const anchorLinks =
-        document.querySelectorAll(
-            'a[href^="#"]'
-        );
+        document.querySelectorAll('a[href^="#"]');
 
 
     anchorLinks.forEach(function (link) {
 
-        link.addEventListener(
-            "click",
-            function (event) {
+        link.addEventListener("click", function (event) {
 
-                const id =
-                    link.getAttribute("href");
+            const id = link.getAttribute("href");
+            const target = document.querySelector(id);
 
+            if (target) {
 
-                const target =
-                    document.querySelector(id);
+                event.preventDefault();
 
-
-                if (target) {
-
-                    event.preventDefault();
-
-
-                    target.scrollIntoView({
-
-                        behavior: "smooth",
-
-                        block: "start"
-
-                    });
-
-                }
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
 
             }
-        );
+
+        });
 
     });
 
 
-
-    /* -----------------------------------------
-       SCROLL REVEAL
-    ------------------------------------------ */
+    /* SCROLL ANIMATIONS */
 
     const elements =
-        document.querySelectorAll(
-            ".reveal"
-        );
+        document.querySelectorAll(".reveal");
 
 
     const observer =
@@ -132,21 +99,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             function (entries) {
 
-                entries.forEach(
-                    function (entry) {
+                entries.forEach(function (entry) {
 
-                        if (
-                            entry.isIntersecting
-                        ) {
+                    if (entry.isIntersecting) {
 
-                            entry.target.classList.add(
-                                "visible"
-                            );
-
-                        }
+                        entry.target.classList.add("visible");
 
                     }
-                );
+
+                });
 
             },
 
@@ -157,12 +118,10 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    elements.forEach(
-        function (element) {
+    elements.forEach(function (element) {
 
-            observer.observe(element);
+        observer.observe(element);
 
-        }
-    );
+    });
 
 });
