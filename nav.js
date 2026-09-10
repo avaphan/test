@@ -1,143 +1,71 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =========================
-       SCROLL REVEAL
-    ========================= */
-
-    const revealElements =
-        document.querySelectorAll(".reveal");
+    const navigation =
+        document.getElementById("navigation");
 
 
-    const revealObserver =
-        new IntersectionObserver(
-
-            function (entries) {
-
-                entries.forEach(function (entry) {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("visible");
-
-                        revealObserver.unobserve(entry.target);
-
-                    }
-
-                });
-
-            },
-
-            {
-                threshold: 0.15
-            }
-
-        );
+    if (!navigation) {
+        return;
+    }
 
 
-    revealElements.forEach(function (element) {
+    navigation.innerHTML = `
+        <nav class="main-nav">
 
-        revealObserver.observe(element);
+            <div class="nav-brand">
 
-    });
+                <a href="index.html">
+                    Ava Phan
+                </a>
 
-
-
-    /* =========================
-       SHRINK HEADER ON SCROLL
-    ========================= */
-
-    const header =
-        document.querySelector(".site-header");
+            </div>
 
 
-    window.addEventListener("scroll", function () {
+            <div class="nav-links">
 
-        if (window.scrollY > 40) {
+                <a href="index.html">
+                    About Me
+                </a>
 
-            header.classList.add("scrolled");
+                <a href="research.html">
+                    Research
+                </a>
 
-        } else {
+                <a href="personal.html">
+                    Personal
+                </a>
 
-            header.classList.remove("scrolled");
+            </div>
 
-        }
-
-    });
-
-
-
-    /* =========================
-       HERO PARALLAX MOVEMENT
-    ========================= */
-
-    const heroContent =
-        document.querySelector(".hero-content");
-
-    const backgroundText =
-        document.querySelector(".hero-background-text");
+        </nav>
+    `;
 
 
-    window.addEventListener("scroll", function () {
-
-        const scrollPosition =
-            window.scrollY;
+    let currentPage =
+        window.location.pathname.split("/").pop();
 
 
-        if (scrollPosition < window.innerHeight) {
+    if (currentPage === "") {
+        currentPage = "index.html";
+    }
 
-            heroContent.style.transform =
-                `translateY(${scrollPosition * 0.08}px)`;
+
+    const links =
+        navigation.querySelectorAll(".nav-links a");
 
 
-            backgroundText.style.transform =
-                `translateX(${scrollPosition * 0.05}px)`;
+    links.forEach(function (link) {
+
+        if (
+            link.getAttribute("href") === currentPage
+        ) {
+
+            link.classList.add("active");
 
         }
-
-    });
-
-
-
-    /* =========================
-       SMOOTH NAVIGATION
-    ========================= */
-
-    const navLinks =
-        document.querySelectorAll(
-            '.nav-links a[href^="#"]'
-        );
-
-
-    navLinks.forEach(function (link) {
-
-        link.addEventListener(
-            "click",
-            function (event) {
-
-                const targetId =
-                    link.getAttribute("href");
-
-
-                const target =
-                    document.querySelector(targetId);
-
-
-                if (target) {
-
-                    event.preventDefault();
-
-
-                    target.scrollIntoView({
-
-                        behavior: "smooth"
-
-                    });
-
-                }
-
-            }
-        );
 
     });
 
 });
+
+
