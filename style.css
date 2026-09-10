@@ -538,14 +538,14 @@ body {
 
 
 .hero-overlay {
-
     position: absolute;
 
-    z-index: 3;
-
-    top: 20%;
-
+    top: 19%;
     left: 6%;
+
+    width: 58%;
+    z-index: 2;
+}
 }
 
 
