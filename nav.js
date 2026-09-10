@@ -1,69 +1,24 @@
-document.addEventListener("DOMContentLoaded", function () {
+// Reveal each section once as it scrolls into view.
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('main section');
 
-    const navigation =
-        document.getElementById("navigation");
+  if (!('IntersectionObserver' in window)) {
+    // Fallback: just show everything if the browser can't observe.
+    sections.forEach(section => section.classList.add('is-visible'));
+    return;
+  }
 
-
-    if (!navigation) {
-        return;
-    }
-
-
-    navigation.innerHTML = `
-        <nav class="main-nav">
-
-            <div class="nav-brand">
-
-                <a href="index.html">
-                    Ava Phan
-                </a>
-
-            </div>
-
-
-            <div class="nav-links">
-
-                <a href="index.html">
-                    About Me
-                </a>
-
-                <a href="research.html">
-                    Research
-                </a>
-
-                <a href="personal.html">
-                    Personal
-                </a>
-
-            </div>
-
-        </nav>
-    `;
-
-
-    let currentPage =
-        window.location.pathname.split("/").pop();
-
-
-    if (currentPage === "") {
-        currentPage = "index.html";
-    }
-
-
-    const links =
-        navigation.querySelectorAll(".nav-links a");
-
-
-    links.forEach(function (link) {
-
-        if (
-            link.getAttribute("href") === currentPage
-        ) {
-
-            link.classList.add("active");
-
-        }
-
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
     });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  });
 
+  sections.forEach(section => observer.observe(section));
 });
