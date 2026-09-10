@@ -6,12 +6,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Ava Phan's personal portfolio featuring marketing, artificial intelligence, research, business strategy, and personal projects."
-    >
-
-    <title>Ava Phan | Marketing & Artificial Intelligence</title>
+    <title>Ava Phan | About Me</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,57 +14,33 @@
 
 <body>
 
-    <!-- =====================================================
-         ENTIRE WEBSITE CONTAINER
-    ====================================================== -->
-
     <div class="site-wrapper">
 
 
-        <!-- =================================================
-             HEADER
-        ================================================== -->
+        <!-- HEADER -->
 
         <header class="site-header">
 
-
-            <!-- AP LOGO -->
-
-            <div class="logo-section">
+            <div class="logo-area">
 
                 <a href="index.html" class="ap-logo" aria-label="Ava Phan Home">
 
                     <span class="logo-a">A</span>
-
                     <span class="logo-p">P</span>
-
-                    <span class="logo-swoosh"></span>
+                    <span class="logo-line"></span>
 
                 </a>
 
             </div>
 
 
-            <!-- TOP INFORMATION AREA -->
-
             <div class="header-main">
 
                 <div class="header-top">
 
-                    <div class="header-title">
-
-                        <span>MARKETING</span>
-
-                        <span class="divider">|</span>
-
-                        <span>ARTIFICIAL INTELLIGENCE</span>
-
-                        <span class="divider">|</span>
-
-                        <span>RESEARCH</span>
-
-                    </div>
-
+                    <p class="header-title">
+                        MARKETING | ARTIFICIAL INTELLIGENCE | RESEARCH
+                    </p>
 
                     <p class="header-subtitle">
                         Turning ideas into impact.
@@ -78,137 +49,47 @@
                 </div>
 
 
-                <!-- MAIN NAVIGATION -->
-
-                <nav class="top-navigation" aria-label="Main Navigation">
-
-                    <a href="index.html" class="nav-link active">
-                        About Me
-                    </a>
-
-                    <a href="research.html" class="nav-link">
-                        Research
-                    </a>
-
-                    <a href="personal.html" class="nav-link">
-                        Personal
-                    </a>
-
-                    <a href="#contact" class="nav-link">
-                        Contact
-                    </a>
-
-                </nav>
+                <div id="navigation"></div>
 
             </div>
 
         </header>
 
 
-        <!-- =================================================
-             THREE COLUMN PAGE
-        ================================================== -->
+        <!-- MAIN THREE COLUMN LAYOUT -->
 
         <div class="page-grid">
 
 
-            <!-- =================================================
-                 LEFT SIDEBAR
-            ================================================== -->
+            <!-- LEFT SIDEBAR -->
 
             <aside class="left-sidebar">
 
                 <div class="sidebar-inner">
 
-
-                    <p class="sidebar-label">
+                    <p class="sidebar-title">
                         EXPLORE
                     </p>
 
-                    <div class="small-line"></div>
+                    <div class="title-line"></div>
 
 
                     <nav class="side-navigation">
 
-
-                        <!-- ABOUT -->
-
-                        <a href="index.html" class="side-link selected">
-
-                            <span class="side-icon">
-
-                                <svg viewBox="0 0 24 24">
-                                    <circle cx="12" cy="8" r="4"></circle>
-                                    <path d="M4 21c0-4.5 3.6-8 8-8s8 3.5 8 8"></path>
-                                </svg>
-
-                            </span>
-
-                            <span>
-                                About Me
-                            </span>
-
+                        <a href="index.html" class="side-link current-side-link">
+                            About Me
                         </a>
-
-
-                        <!-- RESEARCH -->
 
                         <a href="research.html" class="side-link">
-
-                            <span class="side-icon">
-
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M6 2h8l4 4v16H6z"></path>
-                                    <path d="M14 2v5h5"></path>
-                                    <path d="M9 12h6"></path>
-                                    <path d="M9 16h6"></path>
-                                </svg>
-
-                            </span>
-
-                            <span>
-                                Research
-                            </span>
-
+                            Research
                         </a>
-
-
-                        <!-- PERSONAL -->
 
                         <a href="personal.html" class="side-link">
-
-                            <span class="side-icon">
-
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 21S3 15.5 3 9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-9 12-9 12z"></path>
-                                </svg>
-
-                            </span>
-
-                            <span>
-                                Personal
-                            </span>
-
+                            Personal
                         </a>
 
-
-                        <!-- CONTACT -->
-
                         <a href="#contact" class="side-link">
-
-                            <span class="side-icon">
-
-                                <svg viewBox="0 0 24 24">
-                                    <rect x="3" y="5" width="18" height="14" rx="1"></rect>
-                                    <path d="M3 7l9 7 9-7"></path>
-                                </svg>
-
-                            </span>
-
-                            <span>
-                                Contact
-                            </span>
-
+                            Contact
                         </a>
 
                     </nav>
@@ -217,16 +98,14 @@
                     <div class="sidebar-divider"></div>
 
 
-                    <!-- QUOTE -->
-
-                    <blockquote class="sidebar-quote">
+                    <p class="sidebar-quote">
 
                         “Technology gives us opportunity,
                         but people give it purpose.”
 
-                    </blockquote>
+                    </p>
 
-                    <p class="quote-signature">
+                    <p class="quote-name">
                         — AP
                     </p>
 
@@ -235,9 +114,7 @@
             </aside>
 
 
-            <!-- =================================================
-                 MAIN CONTENT
-            ================================================== -->
+            <!-- MAIN CONTENT -->
 
             <main class="main-content">
 
@@ -248,24 +125,22 @@
 
                     <img
                         src="images/hero.jpg"
-                        alt="Iowa State University campus"
+                        alt="Ava Phan portfolio hero image"
                         class="hero-image"
                     >
 
 
                     <div class="hero-overlay">
 
-                        <p class="hero-welcome">
+                        <p class="hero-small-text">
                             WELCOME TO MY WEBSITE
                         </p>
-
 
                         <h1>
                             Ideas for
                             <br>
                             a Brighter Tomorrow.
                         </h1>
-
 
                         <p class="hero-keywords">
                             MARKETING · AI · PEOPLE · IMPACT
@@ -274,7 +149,7 @@
                     </div>
 
 
-                    <div class="hero-quote">
+                    <div class="hero-note">
 
                         <p>
                             Small ideas
@@ -284,8 +159,6 @@
                             big change.
                         </p>
 
-                        <span></span>
-
                     </div>
 
                 </section>
@@ -293,13 +166,13 @@
 
                 <!-- ABOUT -->
 
-                <section class="about-content reveal">
+                <section class="content-section reveal">
 
-                    <p class="section-eyebrow">
+                    <p class="section-label">
                         ABOUT ME
                     </p>
 
-                    <div class="heading-line"></div>
+                    <div class="section-line"></div>
 
 
                     <h2>
@@ -322,114 +195,52 @@
                         Through my coursework and professional experience,
                         I have developed skills in marketing research,
                         communication, business strategy, artificial intelligence,
-                        automation, data analysis, and B2B sales. I enjoy learning
-                        how businesses can use artificial intelligence to improve
-                        decision-making, marketing strategies, customer experiences,
-                        and everyday operations.
+                        automation, data analysis, and B2B sales.
 
                     </p>
 
 
                     <p>
 
-                        I am especially interested in how emerging technology
-                        can help companies better understand people while creating
-                        smarter, more meaningful business strategies.
+                        I enjoy learning how businesses can use artificial
+                        intelligence to improve decision-making, marketing
+                        strategies, customer experiences, and everyday operations.
 
                     </p>
 
 
-                    <a href="personal.html" class="learn-button">
-
-                        Learn More About Me
-
-                        <span>
-                            →
-                        </span>
-
+                    <a href="personal.html" class="main-button">
+                        Learn More About Me →
                     </a>
-
-
-                    <div class="signature">
-                        Ava Phan
-                    </div>
 
                 </section>
 
             </main>
 
 
-            <!-- =================================================
-                 RIGHT SIDEBAR
-            ================================================== -->
+            <!-- RIGHT SIDEBAR -->
 
             <aside class="right-sidebar">
 
 
-                <!-- CURRENT INTERESTS -->
-
                 <section class="right-section">
 
-                    <p class="sidebar-label">
+                    <p class="sidebar-title">
                         CURRENT INTERESTS
                     </p>
 
-                    <div class="small-line"></div>
+                    <div class="title-line"></div>
 
 
                     <div class="interest-list">
 
+                        <p>Artificial Intelligence</p>
 
-                        <div class="interest-item">
+                        <p>Marketing Research</p>
 
-                            <span class="interest-icon">
-                                ◈
-                            </span>
+                        <p>Business Strategy</p>
 
-                            <span>
-                                Artificial Intelligence
-                            </span>
-
-                        </div>
-
-
-                        <div class="interest-item">
-
-                            <span class="interest-icon">
-                                ▥
-                            </span>
-
-                            <span>
-                                Marketing Research
-                            </span>
-
-                        </div>
-
-
-                        <div class="interest-item">
-
-                            <span class="interest-icon">
-                                □
-                            </span>
-
-                            <span>
-                                Business Strategy
-                            </span>
-
-                        </div>
-
-
-                        <div class="interest-item">
-
-                            <span class="interest-icon">
-                                ▱
-                            </span>
-
-                            <span>
-                                Technology
-                            </span>
-
-                        </div>
+                        <p>Technology</p>
 
                     </div>
 
@@ -438,53 +249,51 @@
 
                 <div class="right-divider"></div>
 
-
-                <!-- LATEST UPDATES -->
 
                 <section class="right-section">
 
-                    <p class="sidebar-label">
+                    <p class="sidebar-title">
                         LATEST UPDATES
                     </p>
 
-                    <div class="small-line"></div>
+                    <div class="title-line"></div>
 
 
-                    <div class="update">
-
-                        <p>
-                            Exploring the future of AI in marketing
-                        </p>
+                    <div class="update-item">
 
                         <span>
-                            2026
+                            Building my portfolio
                         </span>
+
+                        <small>
+                            2026
+                        </small>
 
                     </div>
 
 
-                    <div class="update">
-
-                        <p>
-                            Developing new marketing research projects
-                        </p>
+                    <div class="update-item">
 
                         <span>
-                            2026
+                            Exploring AI in marketing
                         </span>
+
+                        <small>
+                            2026
+                        </small>
 
                     </div>
 
 
-                    <div class="update">
-
-                        <p>
-                            Building my professional portfolio
-                        </p>
+                    <div class="update-item">
 
                         <span>
-                            2026
+                            Developing research projects
                         </span>
+
+                        <small>
+                            2026
+                        </small>
 
                     </div>
 
@@ -494,55 +303,41 @@
                 <div class="right-divider"></div>
 
 
-                <!-- CONNECT -->
-
                 <section class="right-section" id="contact">
 
-                    <p class="sidebar-label">
-                        LET’S CONNECT
+                    <p class="sidebar-title">
+                        LET'S CONNECT
                     </p>
 
-                    <div class="small-line"></div>
+                    <div class="title-line"></div>
 
 
                     <div class="social-links">
 
-
                         <a
                             href="https://www.linkedin.com/in/avaphan"
-                            target="_blank"
-                            aria-label="LinkedIn">
+                            target="_blank">
 
-                            in
-
-                        </a>
-
-
-                        <a
-                            href="https://github.com/YOUR-GITHUB-USERNAME"
-                            target="_blank"
-                            aria-label="GitHub">
-
-                            GH
+                            LinkedIn
 
                         </a>
 
 
                         <a
-                            href="mailto:YOUR-EMAIL@iastate.edu"
-                            aria-label="Email">
+                            href="https://github.com/YOUR-USERNAME"
+                            target="_blank">
 
-                            ✉
+                            GitHub
 
                         </a>
 
                     </div>
 
 
-                    <p class="connect-text">
+                    <p class="connect-message">
 
-                        Always open to new opportunities
-                        and meaningful conversations.
+                        Always open to meaningful conversations
+                        and new opportunities.
 
                     </p>
 
@@ -553,43 +348,24 @@
         </div>
 
 
-        <!-- =================================================
-             FOOTER
-        ================================================== -->
+        <!-- FOOTER -->
 
         <footer class="site-footer">
-
 
             <p>
                 © 2026 Ava Phan. All rights reserved.
             </p>
 
 
-            <nav class="footer-navigation">
+            <div class="footer-links">
 
-                <a href="index.html">
-                    About
-                </a>
+                <a href="index.html">About</a>
 
-                <span>|</span>
+                <a href="research.html">Research</a>
 
-                <a href="research.html">
-                    Research
-                </a>
+                <a href="personal.html">Personal</a>
 
-                <span>|</span>
-
-                <a href="personal.html">
-                    Personal
-                </a>
-
-                <span>|</span>
-
-                <a href="#contact">
-                    Contact
-                </a>
-
-            </nav>
+            </div>
 
 
             <p class="footer-message">
@@ -601,7 +377,7 @@
     </div>
 
 
-    <script src="script.js"></script>
+    <script src="nav.js"></script>
 
 </body>
 
