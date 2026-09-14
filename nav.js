@@ -29,6 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="#contact">
                 Contact
             </a>
+            <a href="https://forms.gle/6dpJ1P6i5auFQJ4EA"
+   target="_blank"
+   rel="noopener noreferrer">
+    Feedback
+</a>
 
         </nav>
     `;
