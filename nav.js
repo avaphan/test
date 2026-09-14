@@ -31,7 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
             </a>
             <a href="https://forms.gle/6dpJ1P6i5auFQJ4EA"
    target="_blank"
-   rel="noopener noreferrer">
+   rel="noopener noreferrer"
+   class="feedback-nav">
     Feedback
 </a>
 
